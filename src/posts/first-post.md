@@ -70,16 +70,10 @@ I am done for today, so I created a github repo and push this code, this will be
 
 ## For the next days
 
-Ok, this 
+Ok, this first day was nice, but I think didn't enjoy too much to write down all the things I made (what is a blog? :P), so I think for the next days I'll list the task after finish them but not too much in details unless I noticed something insteresting.
 
 
+## Hit me up!
 
-
-
-## For the next days
-
-Ok, this first day was nice, but I think didn't enjoy too much to write down all the things I made (what is a blog? :P), so I think for the next days I'll list the 
-
-
-
+Please let me know if you read this some day, just a +1 could be great to my motivation :D (Yes, everything is about me)
 
