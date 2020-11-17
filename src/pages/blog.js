@@ -11,14 +11,12 @@ function Blog({ data }) {
   return (
     <Layout>
       <SEO
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-        title="About"
+        keywords={[`blog`, `giuseppe`, `gangi`, `tailwindcss`]}
+        title="Blog"
       />
 
       <section className="flex flex-col items-center md:flex-row">
       <div>
-      <h1>My blog posts!</h1>
-
       {posts.map(post => (
         <article key={post.id}>
           <h2>{post.frontmatter.title}</h2>
@@ -45,7 +43,7 @@ Blog.propTypes = {
 
 export const pageQuery = graphql`
   query MyQuery {
-    posts: allMarkdownRemark {
+    posts: allMarkdownRemark (sort: { fields: [frontmatter___date], order: DESC }){
       posts: nodes {
         frontmatter {
           date(fromNow: true)
