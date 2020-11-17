@@ -1,13 +1,22 @@
-import React from "react"
+import React from "react";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
 
-export default function Blog({ data }) {
+function Blog({ data }) {
   const { posts } = data.posts;
-
+  
   return (
-    <div>
+    <Layout>
+      <SEO
+        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+        title="About"
+      />
+
+      <section className="flex flex-col items-center md:flex-row">
+      <div>
       <h1>My blog posts!</h1>
 
       {posts.map(post => (
@@ -18,8 +27,11 @@ export default function Blog({ data }) {
         </article>
       ))}
     </div>
-  )
+      </section>
+    </Layout>
+  );
 }
+
 
 Blog.propTypes = {
   data: PropTypes.arrayOf({
@@ -46,3 +58,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default Blog;
