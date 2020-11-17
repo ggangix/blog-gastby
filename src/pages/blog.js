@@ -18,9 +18,9 @@ function Blog({ data }) {
       <section className="flex flex-col items-center md:flex-row">
       <div>
       {posts.map(post => (
-        <article key={post.id}>
-          <h2>{post.frontmatter.title}</h2>
-          <small>{post.frontmatter.author}, {post.frontmatter.date}</small>
+        <article key={post.id} className="box-border p-5">
+          <a href={post.fields.slug}><h1><b>{post.frontmatter.title}</b></h1></a>
+          <small>{post.frontmatter.date}</small>
           <p>{post.excerpt}</p>
         </article>
       ))}
@@ -52,6 +52,9 @@ export const pageQuery = graphql`
         }
         excerpt
         id
+        fields{
+          slug
+        }
       }
     }
   }
