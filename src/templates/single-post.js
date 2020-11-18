@@ -16,11 +16,10 @@ export default function SinglePost({ data }) {
 
     <section className="flex flex-col items-center md:flex-row">
     <div>
-  
     <div>
-      <h1>{post.frontmatter.title}</h1>
-      <small>{`${post.frontmatter.author}, ${post.frontmatter.date}.`}</small>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <section id="title" className="text-3xl font-black mt-2 mb-5">{post.frontmatter.title}</section>
+      <section id="author" className="mb-10 font-black text-left text-s"> {`${post.frontmatter.author}, ${post.frontmatter.date}.`}</section>
+      <section className="markdown" dangerouslySetInnerHTML={{ __html: post.html }} />
     </div>
   </div>
     </section>
