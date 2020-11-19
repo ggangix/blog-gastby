@@ -4,7 +4,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 function SEO({ description, lang, meta, keywords, title }) {
-  console.log(keywords)
   const { site } = useStaticQuery(graphql`
     query DefaultSEOQuery {
       site {
