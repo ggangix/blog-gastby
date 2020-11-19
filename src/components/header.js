@@ -14,16 +14,8 @@ function Header() {
   `);
 
   return (
-    <header className="bg-teal-700">
+    <header className="bg-gray-900">
       <div className="flex flex-wrap items-center justify-between max-w-4xl p-4 mx-auto md:p-8">
-        <Link to="/">
-          <h1 className="flex items-center text-white no-underline">
-            <span className="text-xl font-bold tracking-tight">
-              {site.siteMetadata.title}
-            </span>
-          </h1>
-        </Link>
-
         <button
           className="items-center block px-3 py-2 text-white border border-white rounded md:hidden"
           onClick={() => toggleExpansion(!isExpanded)}
@@ -38,6 +30,14 @@ function Header() {
           </svg>
         </button>
 
+        <Link to="/">
+          <h1 className="flex items-center text-white no-underline">
+            <span className="text-xl font-bold tracking-tight">
+              {site.siteMetadata.title}
+            </span>
+          </h1>
+        </Link>
+
         <nav
           className={`${
             isExpanded ? `block` : `hidden`
@@ -45,9 +45,14 @@ function Header() {
         >
           {[
             {
+              route: `/`,
+              title: `Home`,
+            },
+            {
               route: `/about`,
               title: `About`,
             },
+          
             {
               route: `/blog`,
               title: `Blog`,
@@ -58,7 +63,7 @@ function Header() {
             },
           ].map((link) => (
             <Link
-              className="block mt-4 text-white no-underline md:inline-block md:mt-0 md:ml-6"
+              className="block mt-4 text-white hover:text-gray-400 hover:underline no-underline md:inline-block md:mt-0 md:ml-6"
               key={link.title}
               to={link.route}
             >
