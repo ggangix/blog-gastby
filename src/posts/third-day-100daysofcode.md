@@ -2,6 +2,7 @@
 title: 3/100 days of code - Integrate blog to the layout
 author: Giuseppe Gangi
 date: 2020-11-17 18:00:00+01:00
+tags: 100daysofcode, giuseppe, gangi, gatsby, tailwind, javascript, seo, blog
 ---
 
 Today was the day to integrate a litlle bit the blog list and single post page, to do that I am using the layout and seo components. Easy and clean.

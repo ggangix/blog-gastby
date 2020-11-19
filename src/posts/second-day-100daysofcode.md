@@ -2,6 +2,7 @@
 title: 2/100 days of code - Human-readable urls
 author: Giuseppe Gangi
 date: 2020-11-16 20:30:00+01:00
+tags: 100daysofcode, giuseppe, gangi, gatsby, tailwind, javascript, slugs, friendlyurl, seo
 ---
 
 To start the second day I wanted to have a complete route to access to every post. So, I read a little bit about how to do it and was more easy that I thought. 

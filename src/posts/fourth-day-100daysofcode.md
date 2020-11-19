@@ -2,6 +2,7 @@
 title: 4/100 days of code - Styling markdown using tailwind
 author: Giuseppe Gangi
 date: 2020-11-18 19:00:00+01:00
+tags: 100daysofcode, giuseppe, gangi, gatsby, tailwind, javascript
 ---
 
 In my continue try to give to the blog section a look and feel like a *real blog* I worked today on use some tailwind classes to add style to the single post template.

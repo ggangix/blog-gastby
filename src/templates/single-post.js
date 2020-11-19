@@ -10,8 +10,8 @@ export default function SinglePost({ data }) {
   return (
     <Layout>
     <SEO
-      keywords={[`blog`, `giuseppe`, `gangi`, `tailwindcss`]}
-      title="Blog"
+      keywords={[post.frontmatter.tags]}
+      title={post.frontmatter.title}
     />
 
     <section className="flex flex-col items-center md:flex-row">
@@ -46,6 +46,7 @@ export const query = graphql`
       frontmatter {
         date(fromNow: true)
         title
+        tags
         author
       }
     }

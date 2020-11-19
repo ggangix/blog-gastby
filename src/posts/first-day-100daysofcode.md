@@ -2,6 +2,7 @@
 title: 1/100 days of code - Creating a blog with Gatsby and Tailwind
 author: Giuseppe Gangi
 date: 2020-11-15 18:15:00+01:00
+tags: 100daysofcode, giuseppe, gangi, gatsby, tailwind, javascript
 ---
 
 Hello there, this is my first day of 100 on the challenge to spend at least 1 hour a day to code personal projects.
