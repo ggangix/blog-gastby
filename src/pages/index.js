@@ -2,6 +2,7 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import LastPosts from "../components/lastPosts";
 
 function IndexPage() {
   return (
@@ -11,8 +12,9 @@ function IndexPage() {
         title="Home"
       />
 
-      <section className="text-center">
-      </section>
+      <section className="presentation"></section>
+      <LastPosts></LastPosts>
+    
     </Layout>
   );
 }
