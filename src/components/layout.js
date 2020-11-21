@@ -13,7 +13,17 @@ function Layout({ children }) {
       </main>
 
       <footer className="bg-gray-900">
+      <div className="text-white mt-5 text-center ">  This blog is part of my{" "}
+            <a
+              href="https://twitter.com/ggangix/status/1328031248808349696?s=20"
+              target="blank"
+              className="font-bold hover:underline text-opacity-50"
+            >
+              #100DaysOfCode
+            </a>{" "}
+            challenge.</div>
         <nav className="flex justify-between max-w-4xl p-4 mx-auto text-sm md:p-8">
+          
         </nav>
       </footer>
     </div>
