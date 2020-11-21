@@ -3,6 +3,7 @@ title: 6/100 days of code - Add a card component to show the last post
 author: Giuseppe Gangi
 date: 2020-11-20 20:40:00+01:00
 tags: 100daysofcode, giuseppe, gangi, gatsby, tailwind, javascript, cards, StaticQuery
+image: "https://picsum.photos/224/120"
 ---
 
 Today I made a cards component to visualize the last 3 post in the home view, it's not perfect right now but I hope to improve it with the days.
