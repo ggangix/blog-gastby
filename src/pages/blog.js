@@ -18,10 +18,10 @@ function Blog({ data }) {
       <section className="flex flex-col items-center md:flex-row">
       <div>
       {posts.map(post => (
-        <article key={post.id} className="box-border p-5">
-          <a href={post.fields.slug}><h1><b>{post.frontmatter.title}</b></h1></a>
-          <small>{post.frontmatter.date}</small>
-          <p>{post.excerpt}</p>
+        <article key={post.id} className="box-border p-5 mb-5">
+          <p className="text-xs font-mono font-bold">{post.frontmatter.date}</p>
+          <a className="text-2xl font-bold hover:underline" href={post.fields.slug}>{post.frontmatter.title}</a>
+          <p className="text-xl mt-4">{post.excerpt}</p>
         </article>
       ))}
     </div>
