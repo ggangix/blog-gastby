@@ -13,7 +13,7 @@ function ContactPage() {
       <section>
         <form className="mx-auto md:w-1/2">
           <p className="mb-8 leading-loose">
-            Send my a message.{` `}
+            {` `}
           </p>
 
           <label

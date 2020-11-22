@@ -12,13 +12,12 @@ function IndexPage() {
         title="Home"
       />
       <div id="title" className="text-3xl mb-5">
-        Brief presentation{" "}
+       Hello! 
       </div>
       <section className="presentation flex flex-wrap -mx-1 overflow-hidden">
         <div className="my-1 px-1 w-2/3 overflow-hidden">
           <p>
-            Hello! I am an IT Engineer. I work mostly as a Web
-            Developer, I like to code and learn about technology each day. I am a Linux
+           I am an IT Engineer. I work mostly as a Web Developer, I like to code and learn about technology each day. I am a Linux
             user since I was a child, I have been in multiple Tech Talks and
             Hackatons because I truly believe that share knowlege is the the best
             way to progress as a society.{" "}
@@ -37,8 +36,8 @@ function IndexPage() {
         
         </div>
 
-        <div className="my-1 px-1 w-1/3 overflow-hidden">
-          <img src="https://github.com/ggangix.png" className="w-3/4"></img>
+        <div className="ml-8 px-1 overflow-hidden">
+          <img src="https://github.com/ggangix.png" className="w-40"></img>
         </div>
       </section>
       <LastPosts></LastPosts>
