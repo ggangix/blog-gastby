@@ -27,7 +27,7 @@ const LastPosts = () => {
   render={data => {
     return (
   
-    <div className="container my-12 mx-auto w-auto">
+    <div className="container mt-10 mx-auto w-auto">
     <div className="title text-center text-3xl">Latest Posts</div>
     <div className="flex flex-wrap -mx-1 lg:-mx-4">
     {data.posts.posts.map(post => (
