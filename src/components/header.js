@@ -14,7 +14,7 @@ function Header() {
   `);
 
   return (
-    <header className="bg-gray-900">
+    <header className="	bg-gray-800">
       <div className="flex flex-wrap items-center justify-between max-w-4xl p-4 mx-auto md:p-8">
         <button
           className="items-center block px-3 py-2 text-white border border-white rounded md:hidden"
@@ -33,7 +33,7 @@ function Header() {
         <Link to="/">
           <h1 className="flex items-center text-white no-underline">
             <span className="text-xl font-bold tracking-tight">
-              {site.siteMetadata.title}
+            👨‍💻 {site.siteMetadata.title} 
             </span>
           </h1>
         </Link>
