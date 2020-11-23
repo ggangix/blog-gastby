@@ -57,10 +57,10 @@ function Header() {
               route: `/blog`,
               title: `Blog`,
             },
-            {
-              route: `/contact`,
-              title: `Contact`,
-            },
+            // {
+            //   route: `/contact`,
+            //   title: `Contact`,
+            // },
           ].map((link) => (
             <Link
               className="block mt-4 text-white hover:text-gray-400 hover:underline no-underline md:inline-block md:mt-0 md:ml-6"
