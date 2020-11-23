@@ -12,7 +12,7 @@ function IndexPage() {
         title="Home"
       />
       <div id="title" className="text-3xl mb-5">
-       Hello! 
+       Hello, Hola, Ciao, Hallo👋! 
       </div>
       <section className="presentation flex flex-wrap -mx-1 overflow-hidden">
         <div className="my-1 px-1 w-2/3 overflow-hidden">
