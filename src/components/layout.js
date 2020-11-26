@@ -15,18 +15,22 @@ function Layout({ children }) {
 
       <footer className="bg-gray-800">
       <SocialButtons></SocialButtons>
-      <div className="text-white mt-5 text-center ">  This blog is part of my{" "}
+      <div className="text-white mt-5 text-center" >  This blog is part of my{" "}
             <a
               href="https://twitter.com/ggangix/status/1328031248808349696?s=20"
               target="blank"
               className="font-bold hover:underline text-opacity-50"
             >
               #100DaysOfCode
-            </a>{" "}
-            challenge.</div>
-          
-        <nav className="flex justify-between max-w-4xl p-4 mx-auto text-sm md:p-8">
-        </nav>
+            </a> challenge.
+            <a
+              className="font-bold text-xs no-underline hover:underline block  "
+              href="/privacy"
+            >
+              Privacy Policy
+            </a>
+            </div>
+            
       </footer>
     </div>
   );
