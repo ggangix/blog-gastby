@@ -32,7 +32,6 @@
   @apply text-blue-600;
 }
 
-
 .markdown > p {
   @apply mb-6;
 }
@@ -49,9 +48,8 @@
   @apply list-decimal mb-8;
 }
 
-
 .markdown > code,
 .markdown > kbd,
 .markdown > pre {
-  @apply p-4 mt-6 mb-6 font-mono bg-indigo-200 bg-opacity-75 .rounded-md;
+  @apply p-4 mt-6 mb-6 font-mono bg-indigo-200 bg-opacity-75 rounded-md overflow-x-scroll;
 }
