@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Giuseppe's RSS Feed]]></title><description><![CDATA[Giuseppe Gangi personal blog]]></description><link>https://giuseppe.xyz</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 30 Nov 2020 18:47:46 GMT</lastBuildDate><item><title><![CDATA[16/100 days of code - Creating an RSS Feed with Gatsby]]></title><description><![CDATA[I have in mind some ideas to automatize process from the blog to my personal social networks, something like after publish a post, share it…]]></description><link>https://giuseppe.xyz/sixteenth-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/sixteenth-day-100daysofcode/</guid><pubDate>Sun, 29 Nov 2020 18:41:00 GMT</pubDate><content:encoded>&lt;p&gt;I have in mind some ideas to automatize process from the blog to my personal social networks, something like after publish a post, share it on my Twitter and tiny things like that. But of course to do that I needed some kind of structure where I can take the data to my future scripts. So the first option that come to me was to add a RSS Feed.&lt;/p&gt;
+&lt;h2&gt;Installation&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;npm install gatsby-plugin-feed
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Configuration&lt;/h2&gt;
+&lt;p&gt;Then in gatsby-config.js you have to define the data that you want to add to the xml file, a good example is this one:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) =&gt; {
+              return allMarkdownRemark.edges.map(edge =&gt; {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ &quot;content:encoded&quot;: edge.node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: &quot;/rss.xml&quot;,
+            title: &quot;Your Site&apos;s RSS Feed&quot;,
+          },
+        ],
+      },
+    },
+  ],
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Build and have fun&lt;/h2&gt;
+&lt;p&gt;Now after each Gatsby build the rss.xml will be automatically update. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Source:&lt;/strong&gt; &lt;a href=&quot;https://www.gatsbyjs.com/docs/adding-an-rss-feed/&quot;&gt;https://www.gatsbyjs.com/docs/adding-an-rss-feed/&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[15/100 days of code - Installing Google Analytics]]></title><description><![CDATA[I was a little bit curious about how easy or not is to integrate google analytics with Gatsby, and as I imagine was easy using the gatsby…]]></description><link>https://giuseppe.xyz/fifteenth-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/fifteenth-day-100daysofcode/</guid><pubDate>Sat, 28 Nov 2020 17:15:00 GMT</pubDate><content:encoded>&lt;p&gt;I was a little bit curious about how easy or not is to integrate google analytics with Gatsby, and as I imagine was easy using the &lt;strong&gt;gatsby-plugin-google-analytics&lt;/strong&gt; just have to add the basic configuration to the gatsby-config.js file and that&apos;s it. It&apos;s working. &lt;/p&gt;
+&lt;p&gt;After that, I fixed and issue related with the CNAME file, necessary to point to the domain giuseppe.xyz but it had been overwrote after each build, to solve that, I had to create and static directory and put the CNAME file inside, in that way will be in the public directory after build and available in the branch gh-pages.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[14/100 days of code - Fixing some issues]]></title><description><![CDATA[Today the first day after  my blog is online, I noticed some visualizations issues when you try to access to the website from a mobile phone…]]></description><link>https://giuseppe.xyz/fourteenth-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/fourteenth-day-100daysofcode/</guid><pubDate>Fri, 27 Nov 2020 19:53:00 GMT</pubDate><content:encoded>&lt;p&gt;Today the first day after  my blog is online, I noticed some visualizations issues when you try to access to the website from a mobile phone, so I spend the last hour fixing thoses problems, and now looks better.&lt;/p&gt;
+&lt;p&gt;I also changed the format of the dates because I would like to show something like &quot;2020-11-26&quot; rather than &quot;2 days ago&quot;, I don&apos;t know, just personal preferences 😉&lt;/p&gt;
+&lt;p&gt;So I would try to do something else tomorrow, and bring the fun to the roof.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[13/100 days of code - We are online!]]></title><description><![CDATA[Finally and after 13 days of the 100 days of code challenge, the blog is online and ready to new adventures. For now I am using gh-pages…]]></description><link>https://giuseppe.xyz/thirteenth-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/thirteenth-day-100daysofcode/</guid><pubDate>Fri, 27 Nov 2020 19:13:00 GMT</pubDate><content:encoded>&lt;p&gt;Finally and after 13 days of the 100 days of code challenge, the blog is online and ready to new adventures.&lt;/p&gt;
+&lt;p&gt;For now I am using gh-pages, but I&apos;m planning to move it to my own server in the near future, for now I&apos;m quite happy with the result.&lt;/p&gt;
+&lt;h2&gt;How to deploy a gatsby blog using Github pages? (1)&lt;/h2&gt;
+&lt;h3&gt;Configure github repo&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Navigate to your site’s repository.&lt;/li&gt;
+&lt;li&gt;Under the repository name, click Settings.&lt;/li&gt;
+&lt;li&gt;In the GitHub Pages section, use the Source drop-down to select master (for publishing to the root subdomain) or gh-pages (for publishing to a path like /docs) as your GitHub Pages publishing source.&lt;/li&gt;
+&lt;li&gt;Click Save.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Installing the gh-pages package&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;npm install gh-pages --save-dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Add deploy script to package.json&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &quot;scripts&quot;: {
+    &quot;deploy&quot;: &quot;gatsby build --prefix-paths &amp;#x26;&amp;#x26; gh-pages -d public&quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and then: &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm run deploy
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Your site will be in the configured domain.&lt;/p&gt;
+&lt;p&gt;Happy coding.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sources:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://www.gatsbyjs.com/docs/how-gatsby-works-with-github-pages/#configuring-the-github-pages-source-branch&quot;&gt;https://www.gatsbyjs.com/docs/how-gatsby-works-with-github-pages/#configuring-the-github-pages-source-branch&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[12/100 days of code - Final steps]]></title><description><![CDATA[Today I made the Privacy Policy page and also wrote down some paragraph more to the about page. I think is enought for now, and I can…]]></description><link>https://giuseppe.xyz/twelfth-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/twelfth-day-100daysofcode/</guid><pubDate>Thu, 26 Nov 2020 18:30:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I made the Privacy Policy page and also wrote down some paragraph more to the about page. I think is enought for now, and I can publish the blog tomorrow on my 13th day of the challenge, It is very special to me because tomorrow it&apos;s Friday and 😱 the 13th! 😱.&lt;/p&gt;
+&lt;p&gt;I am sure that I can improve the visualization and the content but this is the point of the challenge to be active and keep doing things day by day.&lt;/p&gt;
+&lt;p&gt;Let&apos;s DO IT!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[11/100 days of code - Creating a timeline component]]></title><description><![CDATA[I finally wrote something to the about page, so I had this Idea to show graphically part of my life, so I think a good start was to make…]]></description><link>https://giuseppe.xyz/eleventh-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/eleventh-day-100daysofcode/</guid><pubDate>Wed, 25 Nov 2020 17:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I finally wrote something to the about page, so I had this Idea to show graphically part of my life, so I think a good start was to make this verticalTimeline component, to start to write down this ideas, I think the website is almost complete, but I want to pulish a bit and launch in the next days.&lt;/p&gt;
+&lt;p&gt;The component was really easy to made using tailwindcss. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[10/100 days of code - Implementing social buttons]]></title><description><![CDATA[Today I took the early shift to make the challenge because I'll be busy in the afternoon. I made a Social Buttons component to link to my…]]></description><link>https://giuseppe.xyz/tenth-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/tenth-day-100daysofcode/</guid><pubDate>Tue, 24 Nov 2020 06:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I took the early shift to make the challenge because I&apos;ll be busy in the afternoon.&lt;/p&gt;
+&lt;p&gt;I made a Social Buttons component to link to my personal networks. Very happy with the result, just left to abstract a little bit the component but for now it&apos;s working fine.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[9/100 days of code - Something is better than nothing]]></title><description><![CDATA[I had not 100% motivation today, but I changed the favicon and also remove the contact page. Not proud about my progress but I'll do it much…]]></description><link>https://giuseppe.xyz/nineth-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/nineth-day-100daysofcode/</guid><pubDate>Mon, 23 Nov 2020 17:35:00 GMT</pubDate><content:encoded>&lt;p&gt;I had not 100% motivation today, but I changed the favicon and also remove the contact page.&lt;/p&gt;
+&lt;p&gt;Not proud about my progress but I&apos;ll do it much better tomorrow, without any doubts.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[8/100 days of code - Retouching styles]]></title><description><![CDATA[I did a lot of style modifications to have the project almost done from this area.  I have some things important still to do like write down…]]></description><link>https://giuseppe.xyz/eighth-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/eighth-day-100daysofcode/</guid><pubDate>Sun, 22 Nov 2020 17:30:00 GMT</pubDate><content:encoded>&lt;p&gt;I did a lot of style modifications to have the project almost done from this area. &lt;/p&gt;
+&lt;p&gt;I have some things important still to do like write down a really nice About page where I want to include &lt;em&gt;all my life&lt;/em&gt;, I will try to have it done before day 15, because I would like to to publish the blog and then work in other projects I have on mind to this challenge.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[7/100 days of code - Images for posts and presentation]]></title><description><![CDATA[Today I added the image field to every post to be use in the Home Page lastest posts component, and also make a brief presentation in the…]]></description><link>https://giuseppe.xyz/seventh-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/seventh-day-100daysofcode/</guid><pubDate>Sat, 21 Nov 2020 19:40:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I added the image field to every post to be use in the Home Page lastest posts component, and also make a brief presentation in the same page.&lt;/p&gt;
+&lt;p&gt;I would like to write a large About me page in the nexts days and touch a little bit the design to have my blog complete.&lt;/p&gt;
+&lt;p&gt;Let&apos;s keep coding.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[6/100 days of code - Add a card component to show the last post]]></title><description><![CDATA[Today I made a cards component to visualize the last 3 post in the home view, it's not perfect right now but I hope to improve it with the…]]></description><link>https://giuseppe.xyz/sixth-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/sixth-day-100daysofcode/</guid><pubDate>Fri, 20 Nov 2020 19:40:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I made a cards component to visualize the last 3 post in the home view, it&apos;s not perfect right now but I hope to improve it with the days.&lt;/p&gt;
+&lt;p&gt;I made use of StaticQuery for the first time, and it was nice to have the experience. &lt;/p&gt;
+&lt;p&gt;I think is the day where I am more tired, so was difficult to be concentrate, let&apos;s see tomorrow that is saturday to make a better progress.&lt;/p&gt;
+&lt;p&gt;Let&apos;s keep coding.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[5/100 days of code - Add keywords to every post, using a graphql field]]></title><description><![CDATA[Well on this day after I failed to upgrade to the new tailwind version (2.0) that they release yesterday, I wanted to do something…]]></description><link>https://giuseppe.xyz/fifth-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/fifth-day-100daysofcode/</guid><pubDate>Thu, 19 Nov 2020 18:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Well on this day after I failed to upgrade to the new tailwind version (2.0) that they release yesterday, I wanted to do something productive, so I added a new field to every post, this field is called tags and it will be used for the component SEO to create the meta keywords to every page.&lt;/p&gt;
+&lt;p&gt;Also I made some personalizations in the colors of the site, still not sure about the palette.&lt;/p&gt;
+&lt;p&gt;Let&apos;s keep coding.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[4/100 days of code - Styling markdown using tailwind]]></title><description><![CDATA[In my continue try to give to the blog section a look and feel like a real blog I worked today on use some tailwind classes to add style to…]]></description><link>https://giuseppe.xyz/fourth-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/fourth-day-100daysofcode/</guid><pubDate>Wed, 18 Nov 2020 18:00:00 GMT</pubDate><content:encoded>&lt;p&gt;In my continue try to give to the blog section a look and feel like a &lt;em&gt;real blog&lt;/em&gt; I worked today on use some tailwind classes to add style to the single post template.&lt;/p&gt;
+&lt;p&gt;I&apos;m not 100% convinced of the results but I think is a good start point, I am also thinking on the palette of colors that I want to use, and of course planning to work in the other sections.&lt;/p&gt;
+&lt;p&gt;Maybe I need to spend more than one hour some day, because I really want to have it done and continue the challenge with other kind of projects.&lt;/p&gt;
+&lt;p&gt;Let&apos;s keep coding.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[3/100 days of code - Integrate blog to the layout]]></title><description><![CDATA[Today was the day to integrate a litlle bit the blog list and single post page, to do that I am using the layout and seo components. Easy…]]></description><link>https://giuseppe.xyz/third-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/third-day-100daysofcode/</guid><pubDate>Tue, 17 Nov 2020 17:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today was the day to integrate a litlle bit the blog list and single post page, to do that I am using the layout and seo components. Easy and clean.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Summary of my day:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Integrate blog and blog post using the layout&lt;/li&gt;
+&lt;li&gt;Created single post template.&lt;/li&gt;
+&lt;li&gt;Link every post to the single post page.&lt;/li&gt;
+&lt;li&gt;Sort blog post by date.&lt;/li&gt;
+&lt;li&gt;Add some style to the list of post.&lt;/li&gt;
+&lt;li&gt;Wrote down this post.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let&apos;s continue learning and having fun with this challenge!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2/100 days of code - Human-readable urls]]></title><description><![CDATA[To start the second day I wanted to have a complete route to access to every post. So, I read a little bit about how to do it and was more…]]></description><link>https://giuseppe.xyz/second-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/second-day-100daysofcode/</guid><pubDate>Mon, 16 Nov 2020 19:30:00 GMT</pubDate><content:encoded>&lt;p&gt;To start the second day I wanted to have a complete route to access to every post. So, I read a little bit about how to do it and was more easy that I thought. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Summary of my day:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Created dinamically one route for every markdown file. With user friendly urls defined by the filename.&lt;/li&gt;
+&lt;li&gt;Created single post template.&lt;/li&gt;
+&lt;li&gt;Added a link to the blog in the header.&lt;/li&gt;
+&lt;li&gt;Changed the names of the first two post (not sure yet about it).&lt;/li&gt;
+&lt;li&gt;Wrote down this post.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For tomorrow I would like to integrate the blog and single post with the rest of the site, and style is still pending.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[1/100 days of code - Creating a blog with Gatsby and Tailwind]]></title><description><![CDATA[Hello there, this is my first day of 100 on the challenge to spend at least 1 hour a day to code personal projects. Quick Introduction I am…]]></description><link>https://giuseppe.xyz/first-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/first-day-100daysofcode/</guid><pubDate>Sun, 15 Nov 2020 17:15:00 GMT</pubDate><content:encoded>&lt;p&gt;Hello there, this is my first day of 100 on the challenge to spend at least 1 hour a day to code personal projects.&lt;/p&gt;
+&lt;h1&gt;Quick Introduction&lt;/h1&gt;
+&lt;p&gt;I am a IT Engineer, the last years I&apos;ve been working as a Web Developer (mostly on Javascript), during this time I failed several times in my purpose to spend some time coding in personal projects, learning new things or just have fun with maybe the &quot;thing&quot; I am sure I love to do, PROGRAMMING!&lt;/p&gt;
+&lt;p&gt;I need this time and this challenge to create the habit and come back to my roots, and learn new things.&lt;/p&gt;
+&lt;h1&gt;Day 1&lt;/h1&gt;
+&lt;p&gt;Today, I have been working in my personal blog, I have another one running using Jekkyl (Ruby). But I would like to learn and use Gatsby.js and Tailwind CSS because the last weeks I saw some videos and websites and looks really nice.&lt;/p&gt;
+&lt;h2&gt;Installing Gatsby Tailwind Starter&lt;/h2&gt;
+&lt;p&gt;There is a Gatbsy+Tailwind starter repository, so I cloned it to be the base of this blog you are reading :D &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gatsby new blog https://github.com/taylorbryant/gatsby-starter-tailwind
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, we can run it &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd blog
+npm run develop
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After that I took a quick look about the structure and use, and create the folder posts/ and wrote down this &lt;strong&gt;colossal&lt;/strong&gt; text to the first post.&lt;/p&gt;
+&lt;h2&gt;Installing gatsby-source-filesystem and gatsby-transformer-remark&lt;/h2&gt;
+&lt;p&gt;Ok we have the first post, but where is the blog? well we need to install &lt;strong&gt;gatsby-source-filesystem&lt;/strong&gt; to be able to take local system data to the Gatsby app and &lt;strong&gt;gatsby-transformer-remark&lt;/strong&gt; to transform markdown files to HTML.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install gatsby-source-filesystem
+npm install gatsby-transformer-remark
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And then I added this to the configuration to source the posts folder&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts/`,
+      },
+    },
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Create a blog page&lt;/h2&gt;
+&lt;p&gt;I made a blog page iterating the markdown files in the posts folder, for now without any style or something just for test.&lt;/p&gt;
+&lt;h2&gt;Github&lt;/h2&gt;
+&lt;p&gt;I am done for today, so I created a github repo and push this code, this will be good for push me up to keep doing the challenge.&lt;/p&gt;
+&lt;h2&gt;For the next days&lt;/h2&gt;
+&lt;p&gt;Ok, this first day was nice, but I think didn&apos;t enjoy too much to write down all the things I made (what is a blog? :P), so I think for the next days I&apos;ll list the task after finish them but not too much in details unless I noticed something insteresting.&lt;/p&gt;
+&lt;h2&gt;Hit me up!&lt;/h2&gt;
+&lt;p&gt;Please let me know if you read this some day, just a +1 could be great to my motivation :D (Yes, everything is about me)&lt;/p&gt;</content:encoded></item></channel></rss>
