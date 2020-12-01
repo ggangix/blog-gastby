@@ -1,7 +1,7 @@
 ---
 title: 17/100 days of code - Create an app to tweet from RSS Feed
 author: Giuseppe Gangi
-date: 2020-11-29 19:41:00+01:00
+date: 2020-12-01 19:00:00+01:00
 tags: 100daysofcode, giuseppe, gangi, gatsby, tailwind, javascript, rss, feed, tweet, nodejs
 image: ""
 ---

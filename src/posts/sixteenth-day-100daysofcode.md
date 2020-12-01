@@ -1,7 +1,7 @@
 ---
 title: 16/100 days of code - Creating an RSS Feed with Gatsby
 author: Giuseppe Gangi
-date: 2020-11-29 19:41:00+01:00
+date: 2020-11-30 19:41:00+01:00
 tags: 100daysofcode, giuseppe, gangi, gatsby, tailwind, javascript, rss, feed
 image: ""
 ---
@@ -14,7 +14,7 @@ I have in mind some ideas to automatize process from the blog to my personal soc
 npm install gatsby-plugin-feed
 ```
 
-## Configuration 
+## Configuration
 
 Then in gatsby-config.js you have to define the data that you want to add to the xml file, a good example is this one:
 
@@ -80,13 +80,6 @@ module.exports = {
 
 ## Build and have fun
 
-Now after each Gatsby build the rss.xml will be automatically update. 
-
-
-
-
-
-
+Now after each Gatsby build the rss.xml will be automatically update.
 
 **Source:** https://www.gatsbyjs.com/docs/adding-an-rss-feed/
-
