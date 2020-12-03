@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Giuseppe's RSS Feed]]></title><description><![CDATA[Giuseppe Gangi personal blog]]></description><link>https://giuseppe.xyz</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 02 Dec 2020 15:31:23 GMT</lastBuildDate><item><title><![CDATA[18/100 days of code - Start using my vps]]></title><description><![CDATA[I wanted to use the app I made yesterday to publish the RSS feed to my Twitter account, and how I want to make more scripts like that one…]]></description><link>https://giuseppe.xyz/eighteenth-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/eighteenth-day-100daysofcode/</guid><pubDate>Wed, 02 Dec 2020 17:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I wanted to use the app I made yesterday to publish the RSS feed to my Twitter account, and how I want to make more scripts like that one, so I create a droplet on Digital Ocean to do some nice things.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Giuseppe's RSS Feed]]></title><description><![CDATA[Giuseppe Gangi personal blog]]></description><link>https://giuseppe.xyz</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 03 Dec 2020 16:22:07 GMT</lastBuildDate><item><title><![CDATA[19/100 days of code - Create a Twitter Bot that reply random messages]]></title><description><![CDATA[Today I refactored a twitter bot that I made some time ago to basically reply random messages from a list to all the tweets that receive one…]]></description><link>https://giuseppe.xyz/twitter-reply-bot-random-messages/</link><guid isPermaLink="false">https://giuseppe.xyz/twitter-reply-bot-random-messages/</guid><pubDate>Thu, 03 Dec 2020 17:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I refactored a twitter bot that I made some time ago to basically reply random messages from a list to all the tweets that receive one user account with a certain trigger word.&lt;/p&gt;
+&lt;p&gt;The code is really simple and short and you can find it here: &lt;a href=&quot;https://github.com/ggangix/twitterReplyBot&quot;&gt;https://github.com/ggangix/twitterReplyBot&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can see the bot in action if you tweet &quot;grita&quot; to the @elabominablebot twitter account.&lt;/p&gt;
+&lt;p&gt;The instructions to use:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Clone the repository&lt;/li&gt;
+&lt;li&gt;npm install&lt;/li&gt;
+&lt;li&gt;Add an .env file with the following structure:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;TWITTER_API_KEY=
+TWITTER_API_SECRET_KEY=
+TWITTER_ACCESS_TOKEN=
+TWITTER_ACCESS_TOKEN_SECRET=
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;Fill the config.json with the information that you want to use to your bot.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;twitterUserToTrack: The twitter user that you want to listen for an specific word&lt;/li&gt;
+&lt;li&gt;triggerWord: The word that will trigger the reply.&lt;/li&gt;
+&lt;li&gt;messages: An array with replies to be selected randomly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;npm start and have fun!&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[18/100 days of code - Start using my vps]]></title><description><![CDATA[I wanted to use the app I made yesterday to publish the RSS feed to my Twitter account, and how I want to make more scripts like that one…]]></description><link>https://giuseppe.xyz/eighteenth-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/eighteenth-day-100daysofcode/</guid><pubDate>Wed, 02 Dec 2020 17:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I wanted to use the app I made yesterday to publish the RSS feed to my Twitter account, and how I want to make more scripts like that one, so I create a droplet on Digital Ocean to do some nice things.&lt;/p&gt;
 &lt;p&gt;Currently I am using pm2 to manage the application process.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[17/100 days of code - Create an app to tweet from RSS Feed]]></title><description><![CDATA[Today I created and nodejs app to check the RSS Feed that I created yesterday, every certain time (6 hours by default), and tweet in my…]]></description><link>https://giuseppe.xyz/seventeenth-day-100daysofcode/</link><guid isPermaLink="false">https://giuseppe.xyz/seventeenth-day-100daysofcode/</guid><pubDate>Tue, 01 Dec 2020 18:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I created and nodejs app to check the RSS Feed that I created yesterday, every certain time (6 hours by default), and tweet in my personal account if there is a new blog post.&lt;/p&gt;
 &lt;p&gt;Code source: &lt;a href=&quot;https://github.com/ggangix/rssFeedToTweet&quot;&gt;https://github.com/ggangix/rssFeedToTweet&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Usage&lt;/h3&gt;
