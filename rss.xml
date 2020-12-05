@@ -1,37 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Giuseppe's RSS Feed]]></title><description><![CDATA[Giuseppe Gangi personal blog]]></description><link>https://giuseppe.xyz</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 05 Dec 2020 19:04:14 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[title: 21/100 days of code - Create a Twitter Bot that reply random messages
-author: Giuseppe Gangi
-date: 2020-12-05 20:00:00+01:00
-tags…]]></description><link>https://giuseppe.xyz/starting-a-telegram-bot/</link><guid isPermaLink="false">https://giuseppe.xyz/starting-a-telegram-bot/</guid><content:encoded>&lt;p&gt;title: 21/100 days of code - Create a Twitter Bot that reply random messages
-author: Giuseppe Gangi
-date: 2020-12-05 20:00:00+01:00
-tags: 100daysofcode, giuseppe, gangi, gatsby, tailwind, javascript, feed, tweet, nodejs, pm2, twitter, bot
-image: &quot;&quot;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;Today I refactored a twitter bot that I made some time ago to basically reply random messages from a list to all the tweets that receive one user account with a certain trigger word.&lt;/p&gt;
-&lt;p&gt;The code is really simple and short and you can find it here: &lt;a href=&quot;https://github.com/ggangix/twitterReplyBot&quot;&gt;https://github.com/ggangix/twitterReplyBot&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;You can see the bot in action if you tweet &quot;grita&quot; to the @elabominablebot twitter account.&lt;/p&gt;
-&lt;p&gt;The instructions to use:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Clone the repository&lt;/li&gt;
-&lt;li&gt;npm install&lt;/li&gt;
-&lt;li&gt;Add an .env file with the following structure:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt;TWITTER_API_KEY=
-TWITTER_API_SECRET_KEY=
-TWITTER_ACCESS_TOKEN=
-TWITTER_ACCESS_TOKEN_SECRET=
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ol start=&quot;4&quot;&gt;
-&lt;li&gt;
-&lt;p&gt;Fill the config.json with the information that you want to use to your bot.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;twitterUserToTrack: The twitter user that you want to listen for an specific word&lt;/li&gt;
-&lt;li&gt;triggerWord: The word that will trigger the reply.&lt;/li&gt;
-&lt;li&gt;messages: An array with replies to be selected randomly.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;npm start and have fun!&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[20/100 days of code - Add a parameter to Auto Populate Replies twitter]]></title><description><![CDATA[Today I made a couple of changes to the twitter bot that I made yesterday, because I noticed that was no replying to all the mentioned user…]]></description><link>https://giuseppe.xyz/auto-populate-reply-twitter-bot/</link><guid isPermaLink="false">https://giuseppe.xyz/auto-populate-reply-twitter-bot/</guid><pubDate>Fri, 04 Dec 2020 17:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I made a couple of changes to the twitter bot that I made yesterday, because I noticed that was no replying to all the mentioned user in a tweet. This happen because we have to add the following parameter to the update message: &lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Giuseppe's RSS Feed]]></title><description><![CDATA[Giuseppe Gangi personal blog]]></description><link>https://giuseppe.xyz</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 05 Dec 2020 19:08:05 GMT</lastBuildDate><item><title><![CDATA[21/100 days of code - Creating a Telegram bot to convert Youtube videos]]></title><description><![CDATA[Today I started to code a Telegram bot that use youtube downloader to download and convert youtube videos, for now I only have the bot that…]]></description><link>https://giuseppe.xyz/starting-a-telegram-bot/</link><guid isPermaLink="false">https://giuseppe.xyz/starting-a-telegram-bot/</guid><pubDate>Sat, 05 Dec 2020 19:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I started to code a Telegram bot that use youtube downloader to download and convert youtube videos, for now I only have the bot that receive messages and in the other side the downloader, I would like to merge both in the next days of coding. &lt;/p&gt;
+&lt;p&gt;I am very pleased to have the possibility to code things that makes me have some fun time.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[20/100 days of code - Add a parameter to Auto Populate Replies twitter]]></title><description><![CDATA[Today I made a couple of changes to the twitter bot that I made yesterday, because I noticed that was no replying to all the mentioned user…]]></description><link>https://giuseppe.xyz/auto-populate-reply-twitter-bot/</link><guid isPermaLink="false">https://giuseppe.xyz/auto-populate-reply-twitter-bot/</guid><pubDate>Fri, 04 Dec 2020 17:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I made a couple of changes to the twitter bot that I made yesterday, because I noticed that was no replying to all the mentioned user in a tweet. This happen because we have to add the following parameter to the update message: &lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;   auto_populate_reply_metadata: true
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I think is working better now, I also added a couple of logs more and deployed better on the server. I have more things on mind, let&apos;s see how works.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[19/100 days of code - Create a Twitter Bot that reply random messages]]></title><description><![CDATA[Today I refactored a twitter bot that I made some time ago to basically reply random messages from a list to all the tweets that receive one…]]></description><link>https://giuseppe.xyz/twitter-reply-bot-random-messages/</link><guid isPermaLink="false">https://giuseppe.xyz/twitter-reply-bot-random-messages/</guid><pubDate>Thu, 03 Dec 2020 17:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I refactored a twitter bot that I made some time ago to basically reply random messages from a list to all the tweets that receive one user account with a certain trigger word.&lt;/p&gt;
