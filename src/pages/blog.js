@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 
 function Blog({ data }) {
+  console.log(data);
   const { posts } = data.posts;
 
   return (
@@ -37,13 +38,19 @@ function Blog({ data }) {
 }
 
 Blog.propTypes = {
-  data: PropTypes.arrayOf({
+  data: PropTypes.shape({
     posts: PropTypes.arrayOf({
-      date: PropTypes.string,
-      title: PropTypes.string,
-      author: PropTypes.string,
+      markdownRemark: PropTypes.shape({
+        html: PropTypes.string.isRequired,
+        frontmatter: PropTypes.shape({
+          date: PropTypes.string,
+          title: PropTypes.string,
+          author: PropTypes.string,
+          tags: PropTypes.string,
+        }).isRequired,
+      }).isRequired,
     }).isRequired,
-  }).isRequired,
+  }),
 };
 
 export const pageQuery = graphql`

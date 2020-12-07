@@ -32,11 +32,15 @@ export default function SinglePost({ data }) {
 }
 
 SinglePost.propTypes = {
-  data: PropTypes.arrayOf({
-    posts: PropTypes.arrayOf({
-      date: PropTypes.string,
-      title: PropTypes.string,
-      author: PropTypes.string,
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      html: PropTypes.string.isRequired,
+      frontmatter: PropTypes.shape({
+        date: PropTypes.string,
+        title: PropTypes.string,
+        author: PropTypes.string,
+        tags: PropTypes.string,
+      }).isRequired,
     }).isRequired,
   }).isRequired,
 };
