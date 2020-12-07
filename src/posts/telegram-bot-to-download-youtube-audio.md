@@ -1,5 +1,5 @@
 ---
-title: 22/100 days of code - Telegram bot to dowload and convert youtube video to audio
+title: 22/100 days of code - Telegram bot to download and convert youtube video to audio
 author: Giuseppe Gangi
 date: 2020-12-06 20:00:00+01:00
 tags: 100daysofcode, giuseppe, gangi, gatsby, tailwind, javascript, telegram, youtube, nodejs, pm2, bot
