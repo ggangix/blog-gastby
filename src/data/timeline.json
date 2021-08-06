@@ -1,7 +1,14 @@
-[
+[  
+    {
+        "title": "Software Enginner - Factorial HR",
+        "date": "July 2021 - Currently",
+        "description": "Work in the Growth Enablement Team. Provide solutions using Ruby on Rails, Javascript and PHP",
+        "country": "Spain",
+        "icon":"fa-code"
+    }, 
     {
         "title": "Software Enginner - Foxxum GmbH",
-        "date": "December 2016 - Currently",
+        "date": "December 2016 - June 2021",
         "description": "Developing web apps and providing solutions for Smart TVs. Using Javascript (NodeJS, React) and with experience in video and DRM implementations using Widevine and Playready.",
         "country": "Germany",
         "icon":"fa-code"

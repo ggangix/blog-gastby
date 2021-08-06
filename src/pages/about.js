@@ -14,8 +14,8 @@ function AboutPage() {
 
       <section className="items-center m-8">
         <p className="mb-4">
-          My name is Giuseppe and I am IT Enginner, currently working in Germany
-          as a Software Enginner at Foxxum GmbH. I was born in Venezuela in an
+          My name is Giuseppe and I am IT Enginner, currently working in Barcelona, Spain
+          as a Software Enginner at Factorial HR. I was born in Venezuela in an
           immigrant family from Italy and Colombia.
         </p>
         <p className="mb-4">
