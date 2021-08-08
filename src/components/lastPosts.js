@@ -40,7 +40,7 @@ const LastPosts = () => {
                   <article className="overflow-hidden rounded-lg shadow-lg">
                     <a href={post.fields.slug}>
                       <img
-                        alt="Placeholder"
+                        alt={post.frontmatter.title}
                         className="block h-auto w-full"
                         src={post.frontmatter.image || placeHolderImage}
                       />
