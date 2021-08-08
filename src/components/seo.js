@@ -33,6 +33,10 @@ function SEO({ description, lang, meta, keywords, title }) {
           content: title,
         },
         {
+          property: `og:image`,
+          content: "https://github.com/ggangix.png",
+        },
+        {
           property: `og:description`,
           content: metaDescription,
         },
