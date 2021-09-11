@@ -41,13 +41,13 @@ const LastPosts = () => {
                     <a href={post.fields.slug}>
                       <img
                         alt={post.frontmatter.title}
-                        className="block h-auto w-full"
+                        className="block object-cover h-40 w-full"
                         src={post.frontmatter.image || placeHolderImage}
                       />
                     </a>
                     <header className="flex md:p-4">
                       <a
-                        className="no-underline hover:underline text-black font-bold text-l"
+                        className="no-underline hover:underline text-black font-bold text-l line-clamp-2"
                         href="#"
                       >
                         {post.frontmatter.title}
