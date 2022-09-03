@@ -2,7 +2,6 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import LastPosts from "../components/lastPosts";
 
 function IndexPage() {
   return (
@@ -29,7 +28,7 @@ function IndexPage() {
 
             I have good sense of humor, and I like to perform Stand up Comedy in some places in Barcelona.
 
-            If you want to know more about me,
+            If you want to know more about me, { " " }
             <a
               href="about"
               className="font-bold hover:underline text-opacity-50"
